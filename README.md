@@ -13,7 +13,7 @@ go get "github.com/AfatekDevelopers/gps_lib_go/devafatekgps"
 ```go
 gps, err := devafatekgps.ParseGpsLine(scanner.Text())
 if err == nil {
-	if gps.fixQuality == "1" || gps.fixQuality == "2" {
+	if gps.GetFixQuality() == "1" || gps.GetFixQuality() == "2" {
 		latitude, _ := gps.GetLatitude()
 		longitude, _ := gps.GetLongitude()
 	} else {
