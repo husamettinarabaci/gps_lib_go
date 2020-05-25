@@ -71,6 +71,6 @@ func (gps Gps) GetLongitude() (string, error) {
 }
 
 //GetFixQuality Get Fix Quality
-func (gps Gps) GetFixQuality() (string, error) {
-	return ParseDegrees(gps.fixQuality, gps.longitudeDirection)
+func (gps Gps) GetFixQuality() string {
+	return gps.fixQuality
 }
