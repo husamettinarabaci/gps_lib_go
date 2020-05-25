@@ -15,7 +15,7 @@ type Gps struct {
 	latitudeDirection  string
 	longitude          string
 	longitudeDirection string
-	fixQuality         string
+	FixQuality         string
 	satellites         string
 	horizontalDilution string
 	antennaAltitude    string
@@ -33,7 +33,7 @@ func ParseGpsLine(line string) (Gps, error) {
 			latitudeDirection:  tokens[3],
 			longitude:          tokens[4],
 			longitudeDirection: tokens[5],
-			fixQuality:         tokens[6],
+			FixQuality:         tokens[6],
 			satellites:         tokens[7],
 		}, nil
 	}
