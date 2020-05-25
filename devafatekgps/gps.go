@@ -15,7 +15,7 @@ type Gps struct {
 	latitudeDirection  string
 	longitude          string
 	longitudeDirection string
-	FixQuality         string
+	fixQuality         string
 	satellites         string
 	horizontalDilution string
 	antennaAltitude    string
@@ -33,11 +33,11 @@ func ParseGpsLine(line string) (Gps, error) {
 			latitudeDirection:  tokens[3],
 			longitude:          tokens[4],
 			longitudeDirection: tokens[5],
-			FixQuality:         tokens[6],
+			fixQuality:         tokens[6],
 			satellites:         tokens[7],
 		}, nil
 	}
-	return Gps{}, errors.New("unsupported nmea string")
+	return Gps{}, errors.New("unsupported gps string")
 }
 
 //ParseDegrees Parse Degrees
@@ -56,16 +56,21 @@ func ParseDegrees(value string, direction string) (string, error) {
 }
 
 //GetLatitude Get Latitude
-func (nmea Gps) GetLatitude() (string, error) {
-	return ParseDegrees(nmea.latitude, nmea.latitudeDirection)
+func (gps Gps) GetLatitude() (string, error) {
+	return ParseDegrees(gps.latitude, gps.latitudeDirection)
 }
 
 //GetFixTimestamp Get Fix Timestamp
-func (nmea Gps) GetFixTimestamp() string {
-	return nmea.fixTimestamp
+func (gps Gps) GetFixTimestamp() string {
+	return gps.fixTimestamp
 }
 
 //GetLongitude Get Longitude
-func (nmea Gps) GetLongitude() (string, error) {
-	return ParseDegrees(nmea.longitude, nmea.longitudeDirection)
+func (gps Gps) GetLongitude() (string, error) {
+	return ParseDegrees(gps.longitude, gps.longitudeDirection)
+}
+
+//GetFixQuality Get Fix Quality
+func (gps Gps) GetFixQuality() (string, error) {
+	return ParseDegrees(gps.fixQuality, gps.longitudeDirection)
 }
