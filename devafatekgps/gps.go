@@ -23,10 +23,12 @@ type Gps struct {
 	updateAge          string
 }
 
+//GNGGA,095507.00,3953.65517,N,03248.30082,E,2,07,1.47,935.3,M,36.0,M,,0000
+
 //ParseGpsLine Parse Gps Data
 func ParseGpsLine(line string) (Gps, error) {
 	tokens := strings.Split(line, ",")
-	if tokens[0] == "$GPGGA" {
+	if tokens[0] == "$GPGGA" || tokens[0] == "$GLGGA" || tokens[0] == "$GAGGA" || tokens[0] == "$GNGGA" {
 		return Gps{
 			fixTimestamp:       tokens[1],
 			latitude:           tokens[2],
