@@ -5,13 +5,13 @@ Go dili için gps kütüphanesi
 ## Kurulum:
 
 ```shell
-go get "github.com/AfatekDevelopers/gps_lib_go/devafatekgps"
+go get "github.com/HsmTeknoloji/gps_lib_go/devhsmtekgps"
 ```
 
 ## Kullanım:
 
 ```go
-gps, err := devafatekgps.ParseGpsLine(scanner.Text())
+gps, err := devhsmtekgps.ParseGpsLine(scanner.Text())
 if err == nil {
 	if gps.GetFixQuality() == "1" || gps.GetFixQuality() == "2" {
 		latitude, _ := gps.GetLatitude()
@@ -23,6 +23,6 @@ if err == nil {
 ```
 
 ## Geliştirici Bilgileri:
-<img src="https://github.com/AfatekDevelopers/companyfiles/blob/master/afatek-logo.png?raw=true" width="200"/>
-Web Site        : www.afatek.com.tr <br />
-Developer Groups : https://t.me/Afatek/ <br />
+<img src="https://github.com/HsmTeknoloji/companyfiles/blob/master/hsmtek-logo.png?raw=true" width="200"/>
+Web Site        : www.hsmteknoloji.com <br />
+Developer Groups : https://t.me/HsmTeknoloji/ <br />

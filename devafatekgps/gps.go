@@ -1,4 +1,4 @@
-package devafatekgps
+package devhsmtekgps
 
 import (
 	"errors"
